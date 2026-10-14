@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101510">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./icon-192.png">
+<title>GYMLOG – Dein Training</title>
+<style>
+:root{--bg:#101510;--panel:#1a221b;--panel2:#222d23;--line:#303c31;--text:#f2f6f0;--muted:#a7b4a7;--green:#FFD84D;--green2:#443817;--accent:#FFD84D;--danger:#ff8d8d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.45 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button{cursor:pointer;border:0;border-radius:14px;padding:12px 14px;background:var(--green);color:#211B08;font-weight:750}button.secondary{background:var(--panel2);color:var(--text);border:1px solid var(--line)}button.ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}button:active{transform:scale(.99)}.app{max-width:760px;margin:auto;padding:18px 16px 100px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:8px 0 20px}.brand{font-size:25px;font-weight:900;letter-spacing:1px}.brand span{color:var(--green)}.eyebrow{font-size:11px;color:var(--green);letter-spacing:1.7px;font-weight:800}.hero{background:linear-gradient(135deg,#342D16,#211F16 70%);border:1px solid #625328;border-radius:24px;padding:22px;margin-bottom:18px}.hero h1{font-size:28px;line-height:1.1;margin:7px 0}.muted{color:var(--muted)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:18px 0}.stat{background:#111b12aa;border:1px solid #5B502A;border-radius:16px;padding:12px}.stat b{display:block;font-size:22px}.stat small{color:#b5c4b2;font-size:12px}.actions{display:flex;gap:9px;flex-wrap:wrap}.actions button{flex:1}.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:16px 0 22px;position:sticky;top:0;background:var(--bg);padding:8px 0;z-index:3}.tab{padding:10px 3px;font-size:12px;border-radius:12px;background:var(--panel);border:1px solid var(--line);color:var(--muted)}.tab.active{background:var(--green2);border-color:#8B7428;color:var(--green)}h2{font-size:21px;margin:6px 0 4px}h3{font-size:16px;margin:0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:10px;margin:20px 0 12px}.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:15px;margin:10px 0}.row{display:flex;align-items:center;justify-content:space-between;gap:10px}.small{font-size:13px}.badge{font-size:11px;color:var(--green);background:var(--green2);padding:5px 8px;border-radius:20px;font-weight:800}.workout-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}.workout-card{min-height:130px;text-align:left;background:var(--panel);border:1px solid var(--line);color:var(--text);padding:15px}.workout-card .letter{font-size:27px;font-weight:900;color:var(--green)}.workout-card p{margin:6px 0;color:var(--muted);font-size:12px}.exercise{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:14px;margin:11px 0}.exercise.done{border-color:#60884c}.exercise-title{display:flex;justify-content:space-between;gap:10px}.exercise-title p{margin:4px 0;color:var(--muted);font-size:12px}.set-head,.set-row{display:grid;grid-template-columns:34px 1fr 1fr 32px;gap:7px;align-items:center}.set-head{font-size:11px;color:var(--muted);padding:10px 0 5px}.set-row{margin:6px 0}.set-num{color:var(--muted);font-size:12px;text-align:center}.field{width:100%;min-width:0;background:#101610;border:1px solid #3a473b;border-radius:10px;color:var(--text);padding:10px 7px;text-align:center}.check{width:30px;height:34px;padding:0;border-radius:9px;background:#3A3219;color:var(--muted);border:1px solid #554A26}.check.checked{background:var(--green);color:#211B08}.exercise-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:10px}.exercise-foot button{padding:8px 10px;font-size:12px}.bar{height:7px;background:#303a30;border-radius:9px;overflow:hidden;margin:8px 0}.bar span{height:100%;display:block;background:var(--green);width:0}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.label{display:block;color:var(--muted);font-size:12px;margin:0 0 5px}.input{width:100%;background:#101610;border:1px solid #3a473b;border-radius:12px;color:var(--text);padding:12px}.full{width:100%;margin-top:12px}.history-item{border-bottom:1px solid var(--line);padding:12px 0}.history-item:last-child{border-bottom:0}.empty{padding:24px;text-align:center;color:var(--muted)}.notice{font-size:12px;color:var(--muted);margin-top:18px;line-height:1.5}.danger{color:var(--danger)}.hidden{display:none!important}.pr{display:grid;grid-template-columns:1fr auto;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.pr:last-child{border:0}.pill{padding:5px 8px;border:1px solid var(--line);border-radius:10px;font-size:12px;color:var(--muted)}@media(min-width:600px){.app{padding-top:28px}.hero{padding:28px}.hero h1{font-size:34px}.workout-list{grid-template-columns:repeat(4,1fr)}.tab{font-size:14px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top"><div><div class="eyebrow">DEIN PERSÖNLICHER FITNESS-TRACKER</div><div class="brand">GYM<span>LOG</span></div></div><div class="badge">● OFFLINE-READY</div></header>
+<section class="hero">
+ <div class="eyebrow">KONSEQUENZ SCHLÄGT PERFEKTION</div><h1>Dein Training.<br>Dein Fortschritt.</h1><div class="muted">Muskeln aufbauen · Körperfett reduzieren</div>
+ <div class="stats"><div class="stat"><b id="weekCount">0/4</b><small>Einheiten diese Woche</small></div><div class="stat"><b id="sessionCount">0</b><small>Trainings gesamt</small></div><div class="stat"><b id="prCount">0</b><small>Bestleistungen</small></div></div>
+ <div class="actions"><button onclick="show('plans')">＋ Training starten</button><button class="secondary" onclick="show('body')">Körperdaten</button></div>
+</section>
+<nav class="tabs">
+<button class="tab active" data-page="home" onclick="show('home')">Übersicht</button>
+<button class="tab" data-page="plans" onclick="show('plans')">Trainieren</button>
+<button class="tab" data-page="history" onclick="show('history')">Historie</button>
+<button class="tab" data-page="progress" onclick="show('progress')">Fortschritt</button>
+</nav>
+<main>
+<section id="home" class="page">
+ <div class="section-head"><div><h2>Dein Trainingssplit</h2><div class="muted small">3 Tage: A → B → C, dann D als Nächstes</div></div></div>
+ <div class="workout-list" id="workoutCards"></div>
+ <div class="section-head"><div><h2>Zuletzt trainiert</h2><div class="muted small">Deine letzten Einheiten</div></div><button class="ghost" onclick="show('history')">Alle anzeigen</button></div>
+ <div class="card" id="recentHome"></div>
+ <div class="notice">Tipp: Beende die meisten Arbeitssätze mit etwa 1–3 Wiederholungen „im Tank“. Saubere Technik hat Vorrang vor mehr Gewicht.</div>
+</section>
+<section id="plans" class="page hidden">
+ <div class="section-head"><div><h2>Training starten</h2><div class="muted small">Gewichte und Wiederholungen pro Satz speichern</div></div></div>
+ <div class="workout-list" id="planCards"></div>
+ <div id="activeWorkout" class="hidden"></div>
+ <div class="card" id="timerCard"><div class="row"><div><h3>⏱ Pausentimer</h3><div class="muted small">Standardpause zwischen Arbeitssätzen</div></div><b id="timerDisplay" style="font-size:26px;color:var(--green)">01:30</b></div><div class="actions" style="margin-top:12px"><button onclick="startTimer(90)">90 Sek.</button><button class="secondary" onclick="startTimer(120)">2 Min.</button><button class="secondary" onclick="startTimer(180)">3 Min.</button><button class="ghost" onclick="stopTimer()">Stopp</button></div></div>
+</section>
+<section id="history" class="page hidden">
+ <div class="section-head"><div><h2>Trainingshistorie</h2><div class="muted small">Abgeschlossene Workouts auf deinem Gerät</div></div></div>
+ <div class="card" id="historyList"></div>
+</section>
+<section id="progress" class="page hidden">
+ <div class="section-head"><div><h2>Deine Bestleistungen</h2><div class="muted small">Höchstes protokolliertes Arbeitsgewicht je Übung</div></div></div>
+ <div class="card" id="prs"></div>
+ <div class="section-head"><div><h2>Gewichtsverlauf</h2><div class="muted small">Dein Körpergewicht im Zeitverlauf</div></div></div>
+ <div class="card" id="weightChart"></div>
+ <div class="card"><h3>Datensicherung</h3><p class="muted small">Deine Daten bleiben in diesem Browser auf diesem Gerät. Exportiere regelmäßig eine Sicherung.</p><div class="actions"><button onclick="exportData()">Daten exportieren</button><button class="secondary" onclick="document.getElementById('importFile').click()">Sicherung importieren</button></div><input id="importFile" type="file" accept="application/json" class="hidden" onchange="importData(event)"></div>
+</section>
+<section id="body" class="page hidden">
+ <div class="section-head"><div><h2>Körperdaten</h2><div class="muted small">Einmal pro Woche unter ähnlichen Bedingungen messen</div></div></div>
+ <div class="card"><div class="form-grid"><div><label class="label">Gewicht (kg)</label><input id="bodyWeight" class="input" type="number" step="0.1" placeholder="z. B. 82,5"></div><div><label class="label">Taille (cm)</label><input id="bodyWaist" class="input" type="number" step="0.1" placeholder="z. B. 91"></div></div><label class="label" style="margin-top:12px">Datum</label><input id="bodyDate" class="input" type="date"><button class="full" onclick="saveBody()">Messung speichern</button></div>
+ <div class="card" id="bodyHistory"></div>
+</section>
+</main>
+<div class="notice">GYMLOG speichert lokal in deinem Browser (localStorage). Browserdaten löschen oder das Gerät wechseln kann Daten entfernen. Nutze den Export für Backups. Keine Daten werden an einen Server gesendet.</div>
+</div>
+<script>
+const PLANS={
+ A:{name:"Oberkörper A",focus:"Brust · Rücken · Schultern · Arme",ex:[["Bankdrücken",3,6,10],["Klimmzüge oder Latzug",3,8,12],["Schrägbank-Kurzhanteldrücken",3,8,12],["Kabelrudern",3,8,12],["Seitheben",3,12,15],["Trizepsdrücken",2,10,15],["Bizepscurls",2,10,15]]},
+ B:{name:"Unterkörper A",focus:"Beine · Gesäß · Bauch",ex:[["Kniebeugen oder Beinpresse",3,6,10],["Rumänisches Kreuzheben",3,8,10],["Beinbeuger",3,10,15],["Beinstrecker",2,10,15],["Wadenheben",3,12,15],["Cable Crunches",3,10,15]]},
+ C:{name:"Oberkörper B",focus:"Rücken · Brust · Schultern · Arme",ex:[["Schrägbankdrücken",3,8,12],["Brustgestütztes Rudern",3,8,12],["Latzug neutral",3,8,12],["Schulterdrücken",3,8,12],["Reverse Fly",2,12,15],["Bizepscurls",2,10,15],["Trizeps am Kabel",2,10,15]]},
+ D:{name:"Unterkörper B",focus:"Beine · Gesäß · Rumpf",ex:[["Beinpresse",3,10,12],["Hip Thrust",3,8,12],["Bulgarian Split Squats",2,8,10],["Beinbeuger",3,10,15],["Wadenheben",3,12,15],["Plank",3,30,60]]}
+};
+const KEY='gymlog_local_v1';
+let db=loadDB(), current=null, working=[];
+function loadDB(){try{return JSON.parse(localStorage.getItem(KEY))||{sessions:[],body:[]}}catch(e){return {sessions:[],body:[]}}}
+function persist(){localStorage.setItem(KEY,JSON.stringify(db));renderAll()}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function dateStr(d=new Date()){return d.toISOString().slice(0,10)}
+function niceDate(d){return new Date(d+'T12:00:00').toLocaleDateString('de-DE',{day:'2-digit',month:'short',year:'numeric'})}
+function show(id){document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));document.getElementById(id).classList.remove('hidden');document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.page===id));if(id==='body')renderBody();if(id==='history')renderHistory();if(id==='progress')renderProgress();window.scrollTo({top:0,behavior:'smooth'})}
+function cards(target,clickFn){document.getElementById(target).innerHTML=Object.entries(PLANS).map(([k,p])=>`<button class="workout-card" onclick="${clickFn}('${k}')"><div class="letter">${k}</div><h3>${p.name}</h3><p>${p.focus}</p><span class="badge">${p.ex.length} Übungen · ~60 Min.</span></button>`).join('')}
+function startWorkout(k){current={id:Date.now(),key:k,date:dateStr(),name:PLANS[k].name};working=PLANS[k].ex.map((e,i)=>({name:e[0],sets:Array.from({length:e[1]},()=>({weight:'',reps:'',done:false}))}));renderActive();document.getElementById('activeWorkout').classList.remove('hidden');document.getElementById('activeWorkout').scrollIntoView({behavior:'smooth',block:'start'})}
+
+function performanceHint(name){
+ const sessions=[...db.sessions].reverse();
+ let last=null,best=0;
+ for(const s of sessions) for(const e of s.exercises) if(e.name===name){
+   for(const set of e.sets){const w=Number(set.weight);if(set.weight!==''&&Number.isFinite(w))best=Math.max(best,w)}
+   if(!last) last={date:s.date,sets:e.sets};
+ }
+ let parts=[];
+ if(last){const vals=last.sets.filter(x=>x.weight!==''||x.reps!=='').map(x=>`${x.weight||'–'} kg × ${x.reps||'–'}`).join(' · ');parts.push('Letztes Mal: '+(vals||'keine Werte'))}
+ if(best>0)parts.push('Bestleistung: '+best+' kg');
+ return parts.length?parts.join(' | '):'Noch keine früheren Werte';
+}
+
+function renderActive(){const el=document.getElementById('activeWorkout');if(!current){el.classList.add('hidden');return}let done=working.reduce((a,e)=>a+e.sets.filter(s=>s.done).length,0),total=working.reduce((a,e)=>a+e.sets.length,0);el.innerHTML=`<div class="section-head"><div><h2>${esc(current.name)}</h2><div class="muted small">${niceDate(current.date)} · ${done}/${total} Sätze erledigt</div></div><button class="ghost" onclick="cancelWorkout()">Abbrechen</button></div><div class="bar"><span style="width:${done/total*100}%"></span></div>`+working.map((ex,i)=>`<article class="exercise ${ex.sets.every(s=>s.done)?'done':''}"><div class="exercise-title"><div><h3>${i+1}. ${esc(ex.name)}</h3><p>Ziel: ${PLANS[current.key].ex[i][2]}–${PLANS[current.key].ex[i][3]} Wiederholungen${current.key==='D'&&ex.name==='Plank'?' Sekunden':''}</p><p style="color:var(--accent, var(--green))">${performanceHint(ex.name)}</p></div><span class="badge">${ex.sets.filter(s=>s.done).length}/${ex.sets.length}</span></div><div class="set-head"><span>Satz</span><span>Gewicht (kg)</span><span>Wdh.</span><span>✓</span></div>${ex.sets.map((s,j)=>`<div class="set-row"><span class="set-num">${j+1}</span><input aria-label="Gewicht" class="field" type="number" min="0" step="0.5" placeholder="kg" value="${esc(s.weight)}" onchange="updateSet(${i},${j},'weight',this.value)"><input aria-label="Wiederholungen" class="field" type="number" min="0" step="1" placeholder="Wdh." value="${esc(s.reps)}" onchange="updateSet(${i},${j},'reps',this.value)"><button class="check ${s.done?'checked':''}" onclick="toggleSet(${i},${j})">${s.done?'✓':'○'}</button></div>`).join('')}<div class="exercise-foot"><span class="muted small">Tipp: sauber und kontrolliert</span><button class="secondary" onclick="copyPrevious(${i})">Letzte Werte</button></div></article>`).join('')+`<button class="full" onclick="finishWorkout()">Training speichern ✓</button><p class="muted small">Deine Einträge werden beim Speichern in der Trainingshistorie abgelegt.</p>`}
+function updateSet(i,j,k,v){working[i].sets[j][k]=v}
+function toggleSet(i,j){working[i].sets[j].done=!working[i].sets[j].done;renderActive()}
+function copyPrevious(i){let prev=[...db.sessions].reverse().find(s=>s.key===current.key&&s.exercises.some(e=>e.name===working[i].name));if(!prev)return alert('Noch keine früheren Werte für diese Übung.');let ex=prev.exercises.find(e=>e.name===working[i].name);working[i].sets=working[i].sets.map((s,j)=>({...s,weight:ex.sets[j]?.weight||s.weight,reps:ex.sets[j]?.reps||s.reps}));renderActive()}
+function cancelWorkout(){if(confirm('Training wirklich verwerfen?')){current=null;working=[];document.getElementById('activeWorkout').classList.add('hidden')}}
+function finishWorkout(){if(!working.some(e=>e.sets.some(s=>s.weight!==''||s.reps!==''||s.done)))return alert('Trage erst mindestens einen Satz ein.');db.sessions.push({...current,exercises:working.map(e=>({name:e.name,sets:e.sets.map(s=>({...s}))}))});current=null;working=[];persist();document.getElementById('activeWorkout').classList.add('hidden');show('history');}
+function renderHistory(){const el=document.getElementById('historyList');if(!db.sessions.length){el.innerHTML='<div class="empty">Noch keine Trainings gespeichert.<br>Starte deine erste Einheit unter „Trainieren“.</div>';return}el.innerHTML=[...db.sessions].reverse().map(s=>`<div class="history-item"><div class="row"><div><b>${esc(s.name)}</b><div class="muted small">${niceDate(s.date)}</div></div><span class="badge">${s.exercises.reduce((n,e)=>n+e.sets.filter(x=>x.done).length,0)} Sätze</span></div><details style="margin-top:9px"><summary class="muted small">Details anzeigen</summary>${s.exercises.map(e=>`<p class="small"><b>${esc(e.name)}</b><br>${e.sets.map((x,i)=>`S${i+1}: ${x.weight||'–'} kg × ${x.reps||'–'} ${x.done?'✓':''}`).join(' · ')}</p>`).join('')}</details><button class="ghost small" style="margin-top:8px" onclick="deleteSession(${s.id})">Eintrag löschen</button></div>`).join('')}
+function deleteSession(id){if(confirm('Diesen Trainingseintrag löschen?')){db.sessions=db.sessions.filter(s=>s.id!==id);persist()}}
+function renderProgress(){let prs={};db.sessions.forEach(s=>s.exercises.forEach(e=>e.sets.forEach(x=>{let w=Number(x.weight);if(x.weight!==''&&Number.isFinite(w)&&(!prs[e.name]||w>prs[e.name].weight))prs[e.name]={weight:w,reps:x.reps,name:e.name,date:s.date}})));let p=document.getElementById('prs');p.innerHTML=Object.keys(prs).length?Object.values(prs).sort((a,b)=>b.weight-a.weight).map(x=>`<div class="pr"><div><b>${esc(x.name)}</b><div class="muted small">${niceDate(x.date)} · ${x.reps||'–'} Wdh.</div></div><b style="color:var(--green)">${x.weight} kg</b></div>`).join(''):'<div class="empty">Noch keine Bestleistungen. Protokolliere dein erstes Training!</div>';
+let body=[...db.body].sort((a,b)=>a.date.localeCompare(b.date));let ch=document.getElementById('weightChart');if(!body.length){ch.innerHTML='<div class="empty">Noch keine Körperdaten eingetragen.</div>';return}let vals=body.filter(x=>x.weight!==''&&Number(x.weight)>0);if(!vals.length){ch.innerHTML='<div class="empty">Trage dein Körpergewicht ein, um den Verlauf zu sehen.</div>';return}let min=Math.min(...vals.map(x=>Number(x.weight))),max=Math.max(...vals.map(x=>Number(x.weight)));let range=max-min||1;ch.innerHTML=`<div class="row"><span class="muted small">Ältester Eintrag</span><span class="muted small">Neuester Eintrag</span></div><div style="display:flex;align-items:end;gap:7px;height:120px;padding:10px 0">${vals.map(x=>`<div title="${niceDate(x.date)}: ${x.weight} kg" style="flex:1;min-width:8px;height:${25+(Number(x.weight)-min)/range*65}%;background:var(--green);border-radius:6px 6px 2px 2px"></div>`).join('')}</div><div class="row"><b>${min} kg</b><b>${max} kg</b></div><div class="muted small" style="margin-top:10px">${vals.length} Messungen gespeichert · Beurteile den Trend über mehrere Wochen.</div>`}
+function saveBody(){let w=document.getElementById('bodyWeight').value,wa=document.getElementById('bodyWaist').value,d=document.getElementById('bodyDate').value||dateStr();if(w===''&&wa==='')return alert('Bitte Gewicht oder Taillenumfang eingeben.');db.body.push({id:Date.now(),date:d,weight:w,waist:wa});document.getElementById('bodyWeight').value='';document.getElementById('bodyWaist').value='';persist();renderBody();alert('Messung gespeichert!')}
+function renderBody(){let el=document.getElementById('bodyHistory');if(!el)return;el.innerHTML=db.body.length?[...db.body].reverse().map(x=>`<div class="history-item"><div class="row"><b>${niceDate(x.date)}</b><button class="ghost" onclick="deleteBody(${x.id})">Löschen</button></div><div class="muted small">${x.weight!==''?'Gewicht: '+esc(x.weight)+' kg':'Gewicht: –'} · ${x.waist!==''?'Taille: '+esc(x.waist)+' cm':'Taille: –'}</div></div>`).join(''):'<div class="empty">Noch keine Messungen gespeichert.</div>'}
+function deleteBody(id){db.body=db.body.filter(x=>x.id!==id);persist();renderBody()}
+function renderAll(){document.getElementById('sessionCount').textContent=db.sessions.length;document.getElementById('prCount').textContent=Object.keys(getPRs()).length;let now=new Date(),monday=new Date(now);monday.setDate(now.getDate()-((now.getDay()+6)%7));monday.setHours(0,0,0,0);document.getElementById('weekCount').textContent=db.sessions.filter(s=>new Date(s.date+'T12:00:00')>=monday).length+'/4';renderHistory();renderProgress();renderBody();let r=document.getElementById('recentHome');r.innerHTML=db.sessions.length?[...db.sessions].reverse().slice(0,3).map(s=>`<div class="history-item"><b>${esc(s.name)}</b><div class="muted small">${niceDate(s.date)} · ${s.exercises.length} Übungen</div></div>`).join(''):'<div class="empty">Dein erstes Training wartet auf dich.</div>'}
+function getPRs(){let p={};db.sessions.forEach(s=>s.exercises.forEach(e=>e.sets.forEach(x=>{let w=Number(x.weight);if(x.weight!==''&&Number.isFinite(w)&&(!p[e.name]||w>p[e.name]))p[e.name]=w})));return p}
+function exportData(){let blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='gymlog-sicherung-'+dateStr()+'.json';a.click();URL.revokeObjectURL(a.href)}
+function importData(ev){let f=ev.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result);if(!Array.isArray(x.sessions)||!Array.isArray(x.body))throw 0;if(confirm('Import ersetzt die aktuellen Daten. Vorher bitte ggf. exportieren. Fortfahren?')){db=x;persist();alert('Sicherung importiert.')}}catch(e){alert('Datei ist keine gültige GYMLOG-Sicherung.')}};r.readAsText(f);ev.target.value=''}
+
+let timerInterval=null,timerLeft=90;
+function paintTimer(){const m=String(Math.floor(timerLeft/60)).padStart(2,'0'),s=String(timerLeft%60).padStart(2,'0');const el=document.getElementById('timerDisplay');if(el)el.textContent=m+':'+s}
+function startTimer(seconds){clearInterval(timerInterval);timerLeft=seconds;paintTimer();timerInterval=setInterval(()=>{timerLeft--;paintTimer();if(timerLeft<=0){clearInterval(timerInterval);timerInterval=null;try{if(navigator.vibrate)navigator.vibrate([180,80,180])}catch(e){};const el=document.getElementById('timerDisplay');if(el)el.textContent='FERTIG!'}},1000)}
+function stopTimer(){clearInterval(timerInterval);timerInterval=null;timerLeft=90;paintTimer()}
+
+cards('workoutCards','startWorkout');cards('planCards','startWorkout');document.getElementById('bodyDate').value=dateStr();renderAll();
+if('serviceWorker' in navigator && (location.protocol==='https:' || location.hostname==='localhost')){navigator.serviceWorker.register('./sw.js').catch(()=>{})}
+</script>
+</body>
+</html>
