@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101510">
+<title>NIK GYM – Dein Training</title>
+<style>
+:root{--bg:#101510;--panel:#1a221b;--panel2:#222d23;--line:#303c31;--text:#f2f6f0;--muted:#a7b4a7;--green:#FFD84D;--green2:#443817;--accent:#FFD84D;--danger:#ff8d8d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.45 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button{cursor:pointer;border:0;border-radius:14px;padding:12px 14px;background:var(--green);color:#211B08;font-weight:750}button.secondary{background:var(--panel2);color:var(--text);border:1px solid var(--line)}button.ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}button:active{transform:scale(.99)}.app{max-width:760px;margin:auto;padding:18px 16px 100px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:8px 0 20px}.brand{font-size:25px;font-weight:900;letter-spacing:1px}.brand span{color:var(--green)}.eyebrow{font-size:11px;color:var(--green);letter-spacing:1.7px;font-weight:800}.hero{background:linear-gradient(135deg,#342D16,#211F16 70%);border:1px solid #625328;border-radius:24px;padding:22px;margin-bottom:18px}.hero h1{font-size:28px;line-height:1.1;margin:7px 0}.muted{color:var(--muted)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:18px 0}.stat{background:#111b12aa;border:1px solid #5B502A;border-radius:16px;padding:12px}.stat b{display:block;font-size:22px}.stat small{color:#b5c4b2;font-size:12px}.actions{display:flex;gap:9px;flex-wrap:wrap}.actions button{flex:1}.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:16px 0 22px;position:sticky;top:0;background:var(--bg);padding:8px 0;z-index:3}.tab{padding:10px 3px;font-size:12px;border-radius:12px;background:var(--panel);border:1px solid var(--line);color:var(--muted)}.tab.active{background:var(--green2);border-color:#8B7428;color:var(--green)}h2{font-size:21px;margin:6px 0 4px}h3{font-size:16px;margin:0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:10px;margin:20px 0 12px}.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:15px;margin:10px 0}.row{display:flex;align-items:center;justify-content:space-between;gap:10px}.small{font-size:13px}.badge{font-size:11px;color:var(--green);background:var(--green2);padding:5px 8px;border-radius:20px;font-weight:800}.workout-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}.workout-card{min-height:130px;text-align:left;background:var(--panel);border:1px solid var(--line);color:var(--text);padding:15px}.workout-card .letter{font-size:27px;font-weight:900;color:var(--green)}.workout-card p{margin:6px 0;color:var(--muted);font-size:12px}.exercise{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:14px;margin:11px 0}.exercise.done{border-color:#60884c}.exercise-title{display:flex;justify-content:space-between;gap:10px}.exercise-title p{margin:4px 0;color:var(--muted);font-size:12px}.set-head,.set-row{display:grid;grid-template-columns:34px 1fr 1fr 32px;gap:7px;align-items:center}.set-head{font-size:11px;color:var(--muted);padding:10px 0 5px}.set-row{margin:6px 0}.set-num{color:var(--muted);font-size:12px;text-align:center}.field{width:100%;min-width:0;background:#101610;border:1px solid #3a473b;border-radius:10px;color:var(--text);padding:10px 7px;text-align:center}.check{width:30px;height:34px;padding:0;border-radius:9px;background:#3A3219;color:var(--muted);border:1px solid #554A26}.check.checked{background:var(--green);color:#211B08}.exercise-foot{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:10px}.exercise-foot button{padding:8px 10px;font-size:12px}.bar{height:7px;background:#303a30;border-radius:9px;overflow:hidden;margin:8px 0}.bar span{height:100%;display:block;background:var(--green);width:0}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.label{display:block;color:var(--muted);font-size:12px;margin:0 0 5px}.input{width:100%;background:#101610;border:1px solid #3a473b;border-radius:12px;color:var(--text);padding:12px}.full{width:100%;margin-top:12px}.history-item{border-bottom:1px solid var(--line);padding:12px 0}.history-item:last-child{border-bottom:0}.empty{padding:24px;text-align:center;color:var(--muted)}.notice{font-size:12px;color:var(--muted);margin-top:18px;line-height:1.5}.danger{color:var(--danger)}.hidden{display:none!important}.pr{display:grid;grid-template-columns:1fr auto;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.pr:last-child{border:0}.pill{padding:5px 8px;border:1px solid var(--line);border-radius:10px;font-size:12px;color:var(--muted)}@media(min-width:600px){.app{padding-top:28px}.hero{padding:28px}.hero h1{font-size:34px}.workout-list{grid-template-columns:repeat(4,1fr)}.tab{font-size:14px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top"><div style="display:flex;align-items:center;gap:12px;min-width:0"><img src="./icon-192.png" alt="NIK GYM Löwenlogo" style="width:64px;height:64px;object-fit:cover;border-radius:14px;border:1px solid #FFD84D"><div><div class="eyebrow">DEIN PERSÖNLICHER FITNESS-TRACKER</div><div class="brand">NIK <span>GYM</span></div></div></div><div class="badge">● OFFLINE-READY</div></header>
+<section class="hero">
+ <div class="eyebrow">KONSEQUENZ SCHLÄGT PERFEKTION</div><h1>Dein Training.<br>Dein Fortschritt.</h1><div class="muted">Muskeln aufbauen · Körperfett reduzieren</div>
+ <div class="stats"><div class="stat"><b id="weekCount">0/4</b><small>Einheiten diese Woche</small></div><div class="stat"><b id="sessionCount">0</b><small>Trainings gesamt</small></div><div class="stat"><b id="prCount">0</b><small>Bestleistungen</small></div></div>
+ <div class="actions"><button onclick="show('plans')">＋ Training starten</button><button class="secondary" onclick="show('body')">Körperdaten</button></div>
+</section>
+<nav class="tabs">
+<button class="tab active" data-page="home" onclick="show('home')">Übersicht</button>
+<button class="tab" data-page="plans" onclick="show('plans')">Trainieren</button>
+<button class="tab" data-page="history" onclick="show('history')">Historie</button>
+<button class="tab" data-page="progress" onclick="show('progress')">Fortschritt</button>
+</nav>
+<main>
+<section id="home" class="page">
+ <div class="section-head"><div><h2>Dein Trainingssplit</h2><div class="muted small">3 Tage: A → B → C, dann D als Nächstes</div></div></div>
+ <div class="workout-list" id="workoutCards"></div>
+ <div class="section-head"><div><h2>Zuletzt trainiert</h2><div class="muted small">Deine letzten Einheiten</div></div><button class="ghost" onclick="show('history')">Alle anzeigen</button></div>
+ <div class="card" id="recentHome"></div>\n <div class="card"><h3>🎯 Damit du Fortschritte siehst</h3><p class="muted small">1) Protokolliere jeden Arbeitssatz. 2) Wenn du bei allen Sätzen das obere Ende des Wiederholungsbereichs mit sauberer Technik erreichst, erhöhe das Gewicht klein (ca. 2–5 %). 3) Miss Gewicht mehrmals pro Woche morgens und vergleiche den Wochendurchschnitt; Taille 1× pro Woche. 4) Für Fettverlust: moderates Kaloriendefizit, ausreichend Protein (ca. 1,6–2,2 g/kg Körpergewicht/Tag) und 7–9 Stunden Schlaf.</p></div>
+ <div class="notice">Tipp: Beende die meisten Arbeitssätze mit etwa 1–3 Wiederholungen „im Tank“. Saubere Technik hat Vorrang vor mehr Gewicht.</div>
+</section>
+<section id="plans" class="page hidden">
+ <div class="section-head"><div><h2>Training starten</h2><div class="muted small">Gewichte und Wiederholungen pro Satz speichern</div></div></div>
+ <div class="card">
+  <h3>Wie möchtest du deine Sätze trainieren?</h3>
+  <div class="actions" style="margin-top:10px">
+   <button id="setsStraight" onclick="setSetStyle('straight')">Gleiches Gewicht</button>
+   <button id="setsPyramid" class="secondary" onclick="setSetStyle('pyramid')">Pyramide</button>
+  </div>
+  <p class="muted small" id="setStyleHint">Gleiches Gewicht in allen Arbeitssätzen; steigere zuerst die Wiederholungen.</p>
+</div>
+<div class="card">
+  <h3>Was möchtest du heute nutzen?</h3>
+  <div class="actions" style="margin-top:10px">
+   <button id="equipFree" class="secondary" onclick="setEquipment('free')">Freie Gewichte</button>
+   <button id="equipMachine" class="secondary" onclick="setEquipment('machine')">Maschinen</button>
+   <button id="equipBoth" onclick="setEquipment('both')">Beides</button>
+  </div>
+  <p class="muted small" id="equipHint">Auswahl: Beides</p>
+</div>
+<div class="card" id="deloadCard">
+  <div class="row"><div><h3>🛟 Deload-Woche</h3><div class="muted small">Weniger Ermüdung, Technik sauber halten</div></div><button id="deloadToggle" class="secondary" onclick="toggleDeload()">Aktivieren</button></div>
+  <p class="muted small" id="deloadStatus">Normaler Trainingsmodus. Deload bei anhaltender Müdigkeit, sinkender Leistung oder etwa alle 5–8 harte Trainingswochen erwägen.</p>
+</div>
+<div class="workout-list" id="planCards"></div>
+ <div id="activeWorkout" class="hidden"></div>
+ <div class="card" id="timerCard"><div class="row"><div><h3>⏱ Pausentimer</h3><div class="muted small">Standardpause zwischen Arbeitssätzen</div></div><b id="timerDisplay" style="font-size:26px;color:var(--green)">01:30</b></div><div class="actions" style="margin-top:12px"><button onclick="startTimer(90)">90 Sek.</button><button class="secondary" onclick="startTimer(120)">2 Min.</button><button class="secondary" onclick="startTimer(180)">3 Min.</button><button class="ghost" onclick="stopTimer()">Stopp</button></div></div>
+</section>
+<section id="history" class="page hidden">
+ <div class="section-head"><div><h2>Trainingshistorie</h2><div class="muted small">Abgeschlossene Workouts auf deinem Gerät</div></div></div>
+ <div class="card" id="historyList"></div>
+</section>
+<section id="progress" class="page hidden">
+ <div class="section-head"><div><h2>Deine Bestleistungen</h2><div class="muted small">Höchstes protokolliertes Arbeitsgewicht je Übung</div></div></div>
+ <div class="card" id="prs"></div>
+ <div class="section-head"><div><h2>Gewichtsverlauf</h2><div class="muted small">Dein Körpergewicht im Zeitverlauf</div></div></div>
+ <div class="card" id="weightChart"></div>
+ <div class="card"><h3>Datensicherung</h3><p class="muted small">Deine Daten bleiben in diesem Browser auf diesem Gerät. Exportiere regelmäßig eine Sicherung.</p><div class="actions"><button onclick="exportData()">Daten exportieren</button><button class="secondary" onclick="document.getElementById('importFile').click()">Sicherung importieren</button></div><input id="importFile" type="file" accept="application/json" class="hidden" onchange="importData(event)"></div>
+</section>
+<section id="body" class="page hidden">
+ <div class="section-head"><div><h2>Körperdaten</h2><div class="muted small">Einmal pro Woche unter ähnlichen Bedingungen messen</div></div></div>
+ <div class="card"><div class="form-grid"><div><label class="label">Gewicht (kg)</label><input id="bodyWeight" class="input" type="number" step="0.1" placeholder="z. B. 82,5"></div><div><label class="label">Taille (cm)</label><input id="bodyWaist" class="input" type="number" step="0.1" placeholder="z. B. 91"></div></div><label class="label" style="margin-top:12px">Datum</label><input id="bodyDate" class="input" type="date"><button class="full" onclick="saveBody()">Messung speichern</button></div>
+ <div class="card" id="bodyHistory"></div>
+</section>
+</main>
+<div class="notice">GYMLOG speichert lokal in deinem Browser (localStorage). Browserdaten löschen oder das Gerät wechseln kann Daten entfernen. Nutze den Export für Backups. Keine Daten werden an einen Server gesendet.</div>
+</div>
+<script>
+const PLANS={
+ A:{name:"Oberkörper A",focus:"Brust · Rücken · Schultern · Arme",ex:[["Bankdrücken",3,6,10],["Klimmzüge oder Latzug",3,8,12],["Schrägbank-Kurzhanteldrücken",3,8,12],["Kabelrudern",3,8,12],["Seitheben",3,12,15],["Trizepsdrücken",2,10,15],["Bizepscurls",2,10,15]]},
+ B:{name:"Unterkörper A",focus:"Beine · Gesäß · Bauch",ex:[["Kniebeugen oder Beinpresse",3,6,10],["Rumänisches Kreuzheben",3,8,10],["Beinbeuger",3,10,15],["Beinstrecker",2,10,15],["Wadenheben",3,12,15],["Cable Crunches",3,10,15]]},
+ C:{name:"Oberkörper B",focus:"Rücken · Brust · Schultern · Arme",ex:[["Schrägbankdrücken",3,8,12],["Brustgestütztes Rudern",3,8,12],["Latzug neutral",3,8,12],["Schulterdrücken",3,8,12],["Reverse Fly",2,12,15],["Bizepscurls",2,10,15],["Trizeps am Kabel",2,10,15]]},
+ D:{name:"Unterkörper B",focus:"Beine · Gesäß · Rumpf",ex:[["Beinpresse",3,10,12],["Hip Thrust",3,8,12],["Bulgarian Split Squats",2,8,10],["Beinbeuger",3,10,15],["Wadenheben",3,12,15],["Plank",3,30,60]]}
+};
+const KEY='gymlog_local_v1';
+
+let equipmentMode='both';
+let setStyle='straight';
+const LIB={
+"Bankdrücken":{type:"free",alts:["Kurzhantel-Bankdrücken","Brustpresse"],sets:3,min:6,max:10},
+"Kurzhantel-Bankdrücken":{type:"free",alts:["Bankdrücken","Brustpresse"],sets:3,min:8,max:12},
+"Brustpresse":{type:"machine",alts:["Bankdrücken","Kurzhantel-Bankdrücken"],sets:3,min:8,max:12},
+"Klimmzüge oder Latzug":{type:"both",alts:["Klimmzüge","Latzug neutral"],sets:3,min:8,max:12},
+"Klimmzüge":{type:"free",alts:["Latzug neutral","Klimmzüge oder Latzug"],sets:3,min:5,max:10},
+"Schrägbank-Kurzhanteldrücken":{type:"free",alts:["Schrägbankdrücken","Brustpresse schräg"],sets:3,min:8,max:12},
+"Schrägbankdrücken":{type:"both",alts:["Schrägbank-Kurzhanteldrücken","Brustpresse schräg"],sets:3,min:8,max:12},
+"Brustpresse schräg":{type:"machine",alts:["Schrägbankdrücken","Schrägbank-Kurzhanteldrücken"],sets:3,min:8,max:12},
+"Kabelrudern":{type:"machine",alts:["Kurzhantelrudern","Brustgestütztes Rudern"],sets:3,min:8,max:12},
+"Kurzhantelrudern":{type:"free",alts:["Kabelrudern","Brustgestütztes Rudern"],sets:3,min:8,max:12},
+"Brustgestütztes Rudern":{type:"both",alts:["Kabelrudern","Kurzhantelrudern"],sets:3,min:8,max:12},
+"Latzug neutral":{type:"machine",alts:["Klimmzüge","Klimmzüge oder Latzug"],sets:3,min:8,max:12},
+"Seitheben":{type:"both",alts:["Kabel-Seitheben","Seitheben Maschine"],sets:3,min:12,max:15},
+"Kabel-Seitheben":{type:"machine",alts:["Seitheben","Seitheben Maschine"],sets:3,min:12,max:15},
+"Seitheben Maschine":{type:"machine",alts:["Seitheben","Kabel-Seitheben"],sets:3,min:12,max:15},
+"Trizepsdrücken":{type:"machine",alts:["Enges Bankdrücken","Trizeps am Kabel"],sets:2,min:10,max:15},
+"Trizeps am Kabel":{type:"machine",alts:["Trizepsdrücken","Enges Bankdrücken"],sets:2,min:10,max:15},
+"Enges Bankdrücken":{type:"free",alts:["Trizepsdrücken","Trizeps am Kabel"],sets:2,min:8,max:12},
+"Bizepscurls":{type:"both",alts:["Hammercurls","Kabelcurls"],sets:2,min:10,max:15},
+"Hammercurls":{type:"free",alts:["Bizepscurls","Kabelcurls"],sets:2,min:10,max:15},
+"Kabelcurls":{type:"machine",alts:["Bizepscurls","Hammercurls"],sets:2,min:10,max:15},
+"Kniebeugen oder Beinpresse":{type:"both",alts:["Kniebeugen","Goblet Squats","Beinpresse"],sets:3,min:6,max:10},
+"Kniebeugen":{type:"free",alts:["Goblet Squats","Beinpresse"],sets:3,min:6,max:10},
+"Goblet Squats":{type:"free",alts:["Kniebeugen","Beinpresse"],sets:3,min:8,max:12},
+"Beinpresse":{type:"machine",alts:["Kniebeugen","Goblet Squats"],sets:3,min:8,max:12},
+"Rumänisches Kreuzheben":{type:"free",alts:["Kurzhantel-Kreuzheben","Beinbeuger"],sets:3,min:8,max:10},
+"Kurzhantel-Kreuzheben":{type:"free",alts:["Rumänisches Kreuzheben","Beinbeuger"],sets:3,min:8,max:10},
+"Beinbeuger":{type:"machine",alts:["Rumänisches Kreuzheben","Nordic Hamstring Curl"],sets:3,min:10,max:15},
+"Beinstrecker":{type:"machine",alts:["Bulgarian Split Squats","Goblet Squats"],sets:2,min:10,max:15},
+"Wadenheben":{type:"both",alts:["Wadenheben Maschine","Wadenheben stehend"],sets:3,min:12,max:15},
+"Wadenheben Maschine":{type:"machine",alts:["Wadenheben","Wadenheben stehend"],sets:3,min:12,max:15},
+"Wadenheben stehend":{type:"free",alts:["Wadenheben","Wadenheben Maschine"],sets:3,min:12,max:15},
+"Cable Crunches":{type:"machine",alts:["Crunches","Dead Bug"],sets:3,min:10,max:15},
+"Crunches":{type:"free",alts:["Cable Crunches","Dead Bug"],sets:3,min:12,max:20},
+"Dead Bug":{type:"free",alts:["Plank","Cable Crunches"],sets:3,min:8,max:12},
+"Hip Thrust":{type:"both",alts:["Glute Bridge","Hip Thrust Maschine"],sets:3,min:8,max:12},
+"Hip Thrust Maschine":{type:"machine",alts:["Hip Thrust","Glute Bridge"],sets:3,min:8,max:12},
+"Glute Bridge":{type:"free",alts:["Hip Thrust","Hip Thrust Maschine"],sets:3,min:10,max:15},
+"Bulgarian Split Squats":{type:"free",alts:["Ausfallschritte","Beinpresse"],sets:2,min:8,max:10},
+"Ausfallschritte":{type:"free",alts:["Bulgarian Split Squats","Beinpresse"],sets:2,min:8,max:12},
+"Plank":{type:"free",alts:["Dead Bug","Cable Crunches"],sets:3,min:30,max:60}
+};
+function setEquipment(mode){
+ equipmentMode=mode;
+ ['Free','Machine','Both'].forEach(x=>{const b=document.getElementById('equip'+x);if(b)b.className=(mode===x.toLowerCase()?'':'secondary')});
+ document.getElementById('equipHint').textContent='Auswahl: '+({free:'Freie Gewichte',machine:'Maschinen',both:'Beides'}[mode]);
+}
+function setSetStyle(mode){
+ setStyle=mode;
+ const straight=document.getElementById('setsStraight'),pyramid=document.getElementById('setsPyramid');
+ if(straight)straight.className=mode==='straight'?'':'secondary';
+ if(pyramid)pyramid.className=mode==='pyramid'?'':'secondary';
+ const hint=document.getElementById('setStyleHint');
+ if(hint)hint.textContent=mode==='pyramid'
+  ?'Pyramide: Gewicht steigt schrittweise, Wiederholungen sinken. Starte konservativ und erhöhe nur bei sauberer Technik.'
+  :'Gleiches Gewicht in allen Arbeitssätzen; steigere zuerst die Wiederholungen.';
+}
+function applySetStyle(name,k,suggestion){
+ if(setStyle!=='pyramid')return suggestion;
+ const lib=LIB[name]||{sets:suggestion.sets.length||3,min:8,max:12};
+ const count=suggestion.sets.length||lib.sets||3;
+ const previous=previousExercise(name,k);
+ const old=previous&&previous.sets.filter(s=>s.weight!==''||s.reps!=='');
+ const knownWeights=old&&old.map(s=>Number(s.weight)||0).filter(w=>w>0);
+ const base=knownWeights&&knownWeights.length?Math.max(...knownWeights):0;
+ const min=lib.min||8,max=lib.max||12;
+ const reps=[];
+ for(let i=0;i<count;i++){
+   if(count===1)reps.push(Math.round((min+max)/2));
+   else reps.push(Math.round(max-(max-min)*i/(count-1)));
+ }
+ return {sets:Array.from({length:count},(_,i)=>{
+   let weight='';
+   if(base>0){
+     const step=Math.max(0.5,Math.round(base*0.025*2)/2);
+     weight=String(Math.round((base+step*i)*10)/10);
+   }
+   return {weight,reps:String(reps[i]),done:false};
+ }),tip:base>0?'Pyramide: Gewicht steigt je Satz. Vorschläge vorsichtig prüfen und bei Bedarf reduzieren.':'Pyramide gewählt: Wähle ein leichtes Startgewicht und steigere nur in kleinen, kontrollierten Schritten.'};
+}
+function typeOfExercise(name){
+ const explicit={
+  "Bankdrücken":"free","Klimmzüge":"free","Latzug neutral":"machine","Klimmzüge oder Latzug":"both",
+  "Schrägbank-Kurzhanteldrücken":"free","Schrägbankdrücken":"free","Brustpresse schräg":"machine",
+  "Kabelrudern":"machine","Kurzhantelrudern":"free","Brustgestütztes Rudern":"both",
+  "Seitheben":"free","Seitheben Maschine":"machine","Kabel-Seitheben":"machine",
+  "Trizepsdrücken":"machine","Trizeps am Kabel":"machine","Enges Bankdrücken":"free",
+  "Bizepscurls":"free","Hammercurls":"free","Kabelcurls":"machine",
+  "Kniebeugen":"free","Goblet Squats":"free","Beinpresse":"machine","Kniebeugen oder Beinpresse":"both",
+  "Rumänisches Kreuzheben":"free","Kurzhantel-Kreuzheben":"free","Beinbeuger":"machine","Beinstrecker":"machine",
+  "Wadenheben":"free","Wadenheben Maschine":"machine","Wadenheben stehend":"free",
+  "Cable Crunches":"machine","Crunches":"free","Dead Bug":"free",
+  "Hip Thrust":"free","Hip Thrust Maschine":"machine","Glute Bridge":"free",
+  "Bulgarian Split Squats":"free","Ausfallschritte":"free","Plank":"free",
+  "Schulterdrücken":"free","Schulterdrücken Maschine":"machine","Rückenstrecker Maschine":"machine","Rudern Maschine":"machine","Fliegende Maschine":"machine","Kurzhantel-Flys":"free","Rückenstrecker":"free","Beinheben":"free","Reverse Fly":"machine"
+ };
+ return explicit[name] || (LIB[name]||{type:'free'}).type;
+}
+function allowedExercise(name){const t=typeOfExercise(name);return equipmentMode==='both'||t===equipmentMode}
+function resolveExerciseName(name){
+ if(equipmentMode==='both') return name;
+ const free={
+  "Bankdrücken":"Bankdrücken",
+  "Klimmzüge oder Latzug":"Klimmzüge",
+  "Schrägbank-Kurzhanteldrücken":"Schrägbank-Kurzhanteldrücken",
+  "Schrägbankdrücken":"Schrägbank-Kurzhanteldrücken",
+  "Kabelrudern":"Kurzhantelrudern",
+  "Brustgestütztes Rudern":"Kurzhantelrudern",
+  "Seitheben":"Seitheben",
+  "Trizepsdrücken":"Enges Bankdrücken",
+  "Trizeps am Kabel":"Enges Bankdrücken",
+  "Bizepscurls":"Hammercurls",
+  "Kniebeugen oder Beinpresse":"Kniebeugen",
+  "Kniebeugen":"Kniebeugen",
+  "Rumänisches Kreuzheben":"Rumänisches Kreuzheben",
+  "Beinbeuger":"Rumänisches Kreuzheben",
+  "Beinstrecker":"Ausfallschritte",
+  "Wadenheben":"Wadenheben stehend",
+  "Cable Crunches":"Dead Bug",
+  "Schrägbank-Kurzhanteldrücken":"Schrägbank-Kurzhanteldrücken",
+  "Latzug neutral":"Klimmzüge",
+  "Schulterdrücken":"Schulterdrücken",
+  "Reverse Fly":"Kurzhantel-Flys",
+  "Beinpresse":"Goblet Squats",
+  "Hip Thrust":"Hip Thrust",
+  "Bulgarian Split Squats":"Bulgarian Split Squats",
+  "Plank":"Plank"
+ };
+ const machine={
+  "Bankdrücken":"Brustpresse",
+  "Klimmzüge oder Latzug":"Latzug neutral",
+  "Schrägbank-Kurzhanteldrücken":"Brustpresse schräg",
+  "Schrägbankdrücken":"Brustpresse schräg",
+  "Kabelrudern":"Kabelrudern",
+  "Brustgestütztes Rudern":"Rudern Maschine",
+  "Seitheben":"Seitheben Maschine",
+  "Trizepsdrücken":"Trizepsdrücken",
+  "Trizeps am Kabel":"Trizeps am Kabel",
+  "Bizepscurls":"Kabelcurls",
+  "Kniebeugen oder Beinpresse":"Beinpresse",
+  "Kniebeugen":"Beinpresse",
+  "Rumänisches Kreuzheben":"Rückenstrecker Maschine",
+  "Beinbeuger":"Beinbeuger",
+  "Beinstrecker":"Beinstrecker",
+  "Wadenheben":"Wadenheben Maschine",
+  "Cable Crunches":"Cable Crunches",
+  "Schrägbank-Kurzhanteldrücken":"Brustpresse schräg",
+  "Latzug neutral":"Latzug neutral",
+  "Schulterdrücken":"Schulterdrücken Maschine",
+  "Reverse Fly":"Reverse Fly",
+  "Beinpresse":"Beinpresse",
+  "Hip Thrust":"Hip Thrust Maschine",
+  "Bulgarian Split Squats":"Glute-Kickback Maschine",
+  "Plank":"Cable Crunches"
+ };
+ return (equipmentMode==='machine'?machine:free)[name] || name;
+}
+let manualDeload=localStorage.getItem('gymlog_deload_mode')==='true';
+let deloadMode=false;
+function trainingCycleInfo(){
+ const dates=(db && Array.isArray(db.sessions)?db.sessions:[]).map(x=>x.date).filter(Boolean).sort();
+ if(!dates.length)return {week:1,deload:false};
+ const first=new Date(dates[0]+'T12:00:00');
+ const now=new Date(dateStr()+'T12:00:00');
+ const week=Math.max(1,Math.floor((now-first)/604800000)+1);
+ return {week,deload:week%6===0};
+}
+function isDeload(){return manualDeload||trainingCycleInfo().deload;}
+function resolvedPlanExercises(k){
+ const info=trainingCycleInfo();
+ const block=Math.floor((info.week-1)/4);
+ const main=/Bankdrücken|Kniebeugen|Beinpresse|Rumänisches Kreuzheben|Hip Thrust|Schrägbank-Kurzhanteldrücken|Schrägbankdrücken/;
+ return PLANS[k].ex.map(e=>{
+  let base=resolveExerciseName(e[0]);
+  // Rotate selected accessories every 4 weeks; keep key compound lifts stable for measurable progression.
+  if(block>0 && !main.test(base)){
+   const alts=(LIB[base]||{}).alts||[];
+   const viable=alts.filter(a=>LIB[a] && (equipmentMode==='both'||LIB[a].type==='both'||LIB[a].type===equipmentMode));
+   if(viable.length) base=viable[(block-1)%viable.length];
+  }
+  const name=base;
+  const lib=LIB[name]||{sets:e[1],min:e[2],max:e[3]};
+  return [name,lib.sets||e[1],lib.min||e[2],lib.max||e[3]];
+ });
+}
+function previousExercise(name,k){for(const s of [...db.sessions].reverse()){if(s.key===k){const e=s.exercises.find(x=>x.name===name);if(e)return e}}return null}
+function suggestionFor(name,k){
+ const l=LIB[name]||{sets:3,min:8,max:12,alts:[]},prev=previousExercise(name,k);
+ const old=prev&&prev.sets.filter(s=>s.weight!==''||s.reps!=='');
+ if(!old||!old.length)return {sets:Array.from({length:l.sets},()=>({weight:'',reps:String(l.min),done:false})),tip:'Startgewicht selbst wählen. Beginne am unteren Ende des Bereichs und lass 1–3 Wiederholungen Reserve.'};
+ const maxW=Math.max(...old.map(s=>Number(s.weight)||0));
+ const validReps=old.map(s=>Number(s.reps)||0);
+ const allAtTop=validReps.length>0 && validReps.every(r=>r>=(l.max||12));
+ const allAtMin=validReps.length>0 && validReps.every(r=>r>=(l.min||8));
+ // Conservative progression: do not increase weight until every logged work set reaches the top of the range.
+ // Even then suggest the same load first; the user can manually raise it when it feels controlled.
+ let w=maxW, repsSuggestion;
+ if(allAtTop && maxW>0){
+   repsSuggestion=String(l.max||12);
+   return {sets:Array.from({length:prev.sets.length||l.sets},(_,i)=>({weight:String(old[i]?.weight||maxW),reps:String(old[i]?.reps||l.max||12),done:false})),tip:'Du hast das obere Ende erreicht. Gewicht heute erst erhöhen, wenn alle Sätze sauber und mit 1–3 Wiederholungen Reserve gingen.'};
+ }
+ // Never auto-increase load based on an incomplete/low-rep session.
+ repsSuggestion=String(l.min||8);
+ return {sets:Array.from({length:prev.sets.length||l.sets},(_,i)=>({weight:String(old[i]?.weight||''),reps:String(old[i]?.reps||repsSuggestion),done:false})),tip:'Gewicht bleibt wie zuletzt. Erst Wiederholungen steigern, dann bei sicherer Technik Gewicht erhöhen.'};
+}
+
+let db=loadDB(), current=null, working=[];
+function loadDB(){try{return JSON.parse(localStorage.getItem(KEY))||{sessions:[],body:[]}}catch(e){return {sessions:[],body:[]}}}
+function persist(){localStorage.setItem(KEY,JSON.stringify(db));renderAll()}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function dateStr(d=new Date()){return d.toISOString().slice(0,10)}
+function niceDate(d){return new Date(d+'T12:00:00').toLocaleDateString('de-DE',{day:'2-digit',month:'short',year:'numeric'})}
+function show(id){document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));document.getElementById(id).classList.remove('hidden');document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.page===id));if(id==='body')renderBody();if(id==='history')renderHistory();if(id==='progress')renderProgress();window.scrollTo({top:0,behavior:'smooth'})}
+function cards(target,clickFn){document.getElementById(target).innerHTML=Object.entries(PLANS).map(([k,p])=>`<button class="workout-card" onclick="${clickFn}('${k}')"><div class="letter">${k}</div><h3>${p.name}</h3><p>${p.focus}</p><span class="badge">${p.ex.length} Übungen · ~60 Min.</span></button>`).join('')}
+function toggleDeload(){
+ manualDeload=!manualDeload;
+ localStorage.setItem('gymlog_deload_mode',String(manualDeload));
+ deloadMode=isDeload();
+ updateDeloadUI();
+}
+function updateDeloadUI(){
+ const b=document.getElementById('deloadToggle'),st=document.getElementById('deloadStatus');
+ if(!b||!st)return;
+ b.textContent=manualDeload?'Deload manuell ✓':(trainingCycleInfo().deload?'Deload diese Woche ✓':'Deload jetzt');
+ b.className=deloadMode?'':'secondary';
+ st.textContent=deloadMode
+ ?'Deload aktiv: ca. 40–50 % weniger Arbeitssätze, Gewichte etwa 10–15 % reduzieren, mindestens 3–4 Wiederholungen im Tank. Keine Sätze bis zum Muskelversagen.'
+ :`Automatik: Deload in Trainingswoche 6, 12, 18 …; aktuelle Trainingswoche ${trainingCycleInfo().week}. Zubehörübungen wechseln planmäßig alle 4 Wochen. Du kannst den Deload bei Bedarf manuell aktivieren.`;
+}
+function startWorkout(k){deloadMode=isDeload();updateDeloadUI();current={id:Date.now(),key:k,date:dateStr(),name:PLANS[k].name+' · '+({free:'Freie Gewichte',machine:'Maschinen',both:'Mix'}[equipmentMode])};working=resolvedPlanExercises(k).map(e=>{const sug=applySetStyle(e[0],k,suggestionFor(e[0],k));let sets=sug.sets.map(x=>({...x}));let tip=sug.tip;if(deloadMode){const keep=Math.max(1,Math.ceil(sets.length*0.5));sets=sets.slice(0,keep).map(x=>({...x,weight:x.weight!==''?String(Math.round(Number(x.weight)*0.88*2)/2):'',done:false}));tip='DELOAD: reduzierte Sätze und ca. 12 % weniger Gewicht. Locker trainieren, 3–4 Wiederholungen im Tank lassen.';}return {name:e[0],sets,tip}});if(!working.length){alert('Für diese Einheit wurden keine Übungen gefunden. Wähle „Beides“.');return}renderActive();document.getElementById('activeWorkout').classList.remove('hidden');document.getElementById('activeWorkout').scrollIntoView({behavior:'smooth',block:'start'})}
+
+function performanceHint(name){
+ const sessions=[...db.sessions].reverse();
+ let last=null,best=0;
+ for(const s of sessions) for(const e of s.exercises) if(e.name===name){
+   for(const set of e.sets){const w=Number(set.weight);if(set.weight!==''&&Number.isFinite(w))best=Math.max(best,w)}
+   if(!last) last={date:s.date,sets:e.sets};
+ }
+ let parts=[];
+ if(last){const vals=last.sets.filter(x=>x.weight!==''||x.reps!=='').map(x=>`${x.weight||'–'} kg × ${x.reps||'–'}`).join(' · ');parts.push('Letztes Mal: '+(vals||'keine Werte'))}
+ if(best>0)parts.push('Bestleistung: '+best+' kg');
+ return parts.length?parts.join(' | '):'Noch keine früheren Werte';
+}
+
+function renderActive(){const el=document.getElementById('activeWorkout');if(!current){el.classList.add('hidden');return}let done=working.reduce((a,e)=>a+e.sets.filter(s=>s.done).length,0),total=working.reduce((a,e)=>a+e.sets.length,0);el.innerHTML=`<div class="section-head"><div><h2>${esc(current.name)}</h2><div class="muted small">${niceDate(current.date)} · ${done}/${total} Sätze erledigt</div></div><button class="ghost" onclick="cancelWorkout()">Abbrechen</button></div><div class="bar"><span style="width:${done/total*100}%"></span></div>`+working.map((ex,i)=>`<article class="exercise ${ex.sets.every(s=>s.done)?'done':''}"><div class="exercise-title"><div><h3>${i+1}. ${esc(ex.name)}</h3><p>Ziel: ${PLANS[current.key].ex[i][2]}–${PLANS[current.key].ex[i][3]} Wiederholungen${current.key==='D'&&ex.name==='Plank'?' Sekunden':''}</p><p style="color:var(--accent, var(--green))">${performanceHint(ex.name)}</p></div><span class="badge">${ex.sets.filter(s=>s.done).length}/${ex.sets.length}</span></div><div class="set-head"><span>Satz</span><span>Gewicht (kg)</span><span>Wdh.</span><span>✓</span></div>${ex.sets.map((s,j)=>`<div class="set-row"><span class="set-num">${j+1}</span><input aria-label="Gewicht" class="field" type="number" min="0" step="0.5" placeholder="kg" value="${esc(s.weight)}" onchange="updateSet(${i},${j},'weight',this.value)"><input aria-label="Wiederholungen" class="field" type="number" min="0" step="1" placeholder="Wdh." value="${esc(s.reps)}" onchange="updateSet(${i},${j},'reps',this.value)"><button class="check ${s.done?'checked':''}" onclick="toggleSet(${i},${j})">${s.done?'✓':'○'}</button></div>`).join('')}<div class="exercise-foot"><span class="muted small">${esc(ex.tip||'Sauber und kontrolliert')}</span><button class="secondary" onclick="copyPrevious(${i})">Letzte Werte</button></div><div class="row" style="margin-top:10px;gap:8px"><select class="input" style="flex:1" id="alt-${i}">${(LIB[ex.name]?.alts||[]).map(a=>`<option value="${esc(a)}">${esc(a)}</option>`).join('')}</select><button class="ghost" onclick="replaceExercise(${i})">Übung tauschen</button></div></article>`).join('')+`<button class="full" onclick="finishWorkout()">Training speichern ✓</button><p class="muted small">Deine Einträge werden beim Speichern in der Trainingshistorie abgelegt.</p>`}
+function updateSet(i,j,k,v){working[i].sets[j][k]=v}
+function toggleSet(i,j){working[i].sets[j].done=!working[i].sets[j].done;renderActive()}
+function copyPrevious(i){let prev=previousExercise(working[i].name,current.key);if(!prev)return alert('Noch keine früheren Werte für diese Übung.');working[i].sets=working[i].sets.map((s,j)=>({...s,weight:prev.sets[j]?.weight||s.weight,reps:prev.sets[j]?.reps||s.reps}));working[i].tip='Letzte Werte übernommen.';renderActive()}
+function replaceExercise(i){const sel=document.getElementById('alt-'+i);if(!sel||!sel.value)return alert('Keine Alternative hinterlegt.');const name=sel.value;if(working.some((e,j)=>j!==i&&e.name===name))return alert('Diese Übung ist bereits enthalten.');const sug=applySetStyle(name,current.key,suggestionFor(name,current.key));working[i]={name,sets:sug.sets,tip:'Alternative Übung · '+sug.tip};renderActive()}
+function cancelWorkout(){if(confirm('Training wirklich verwerfen?')){current=null;working=[];document.getElementById('activeWorkout').classList.add('hidden')}}
+function finishWorkout(){if(!working.some(e=>e.sets.some(s=>s.weight!==''||s.reps!==''||s.done)))return alert('Trage erst mindestens einen Satz ein.');db.sessions.push({...current,exercises:working.map(e=>({name:e.name,sets:e.sets.map(s=>({...s}))}))});current=null;working=[];persist();document.getElementById('activeWorkout').classList.add('hidden');show('history');}
+function renderHistory(){const el=document.getElementById('historyList');if(!db.sessions.length){el.innerHTML='<div class="empty">Noch keine Trainings gespeichert.<br>Starte deine erste Einheit unter „Trainieren“.</div>';return}el.innerHTML=[...db.sessions].reverse().map(s=>`<div class="history-item"><div class="row"><div><b>${esc(s.name)}</b><div class="muted small">${niceDate(s.date)}</div></div><span class="badge">${s.exercises.reduce((n,e)=>n+e.sets.filter(x=>x.done).length,0)} Sätze</span></div><details style="margin-top:9px"><summary class="muted small">Details anzeigen</summary>${s.exercises.map(e=>`<p class="small"><b>${esc(e.name)}</b><br>${e.sets.map((x,i)=>`S${i+1}: ${x.weight||'–'} kg × ${x.reps||'–'} ${x.done?'✓':''}`).join(' · ')}</p>`).join('')}</details><button class="ghost small" style="margin-top:8px" onclick="deleteSession(${s.id})">Eintrag löschen</button></div>`).join('')}
+function deleteSession(id){if(confirm('Diesen Trainingseintrag löschen?')){db.sessions=db.sessions.filter(s=>s.id!==id);persist()}}
+function renderProgress(){let prs={};db.sessions.forEach(s=>s.exercises.forEach(e=>e.sets.forEach(x=>{let w=Number(x.weight);if(x.weight!==''&&Number.isFinite(w)&&(!prs[e.name]||w>prs[e.name].weight))prs[e.name]={weight:w,reps:x.reps,name:e.name,date:s.date}})));let p=document.getElementById('prs');p.innerHTML=Object.keys(prs).length?Object.values(prs).sort((a,b)=>b.weight-a.weight).map(x=>`<div class="pr"><div><b>${esc(x.name)}</b><div class="muted small">${niceDate(x.date)} · ${x.reps||'–'} Wdh.</div></div><b style="color:var(--green)">${x.weight} kg</b></div>`).join(''):'<div class="empty">Noch keine Bestleistungen. Protokolliere dein erstes Training!</div>';
+let body=[...db.body].sort((a,b)=>a.date.localeCompare(b.date));let ch=document.getElementById('weightChart');if(!body.length){ch.innerHTML='<div class="empty">Noch keine Körperdaten eingetragen.</div>';return}let vals=body.filter(x=>x.weight!==''&&Number(x.weight)>0);if(!vals.length){ch.innerHTML='<div class="empty">Trage dein Körpergewicht ein, um den Verlauf zu sehen.</div>';return}let min=Math.min(...vals.map(x=>Number(x.weight))),max=Math.max(...vals.map(x=>Number(x.weight)));let range=max-min||1;ch.innerHTML=`<div class="row"><span class="muted small">Ältester Eintrag</span><span class="muted small">Neuester Eintrag</span></div><div style="display:flex;align-items:end;gap:7px;height:120px;padding:10px 0">${vals.map(x=>`<div title="${niceDate(x.date)}: ${x.weight} kg" style="flex:1;min-width:8px;height:${25+(Number(x.weight)-min)/range*65}%;background:var(--green);border-radius:6px 6px 2px 2px"></div>`).join('')}</div><div class="row"><b>${min} kg</b><b>${max} kg</b></div><div class="muted small" style="margin-top:10px">${vals.length} Messungen gespeichert · Beurteile den Trend über mehrere Wochen.</div>`}
+function saveBody(){let w=document.getElementById('bodyWeight').value,wa=document.getElementById('bodyWaist').value,d=document.getElementById('bodyDate').value||dateStr();if(w===''&&wa==='')return alert('Bitte Gewicht oder Taillenumfang eingeben.');db.body.push({id:Date.now(),date:d,weight:w,waist:wa});document.getElementById('bodyWeight').value='';document.getElementById('bodyWaist').value='';persist();renderBody();alert('Messung gespeichert!')}
+function renderBody(){let el=document.getElementById('bodyHistory');if(!el)return;el.innerHTML=db.body.length?[...db.body].reverse().map(x=>`<div class="history-item"><div class="row"><b>${niceDate(x.date)}</b><button class="ghost" onclick="deleteBody(${x.id})">Löschen</button></div><div class="muted small">${x.weight!==''?'Gewicht: '+esc(x.weight)+' kg':'Gewicht: –'} · ${x.waist!==''?'Taille: '+esc(x.waist)+' cm':'Taille: –'}</div></div>`).join(''):'<div class="empty">Noch keine Messungen gespeichert.</div>'}
+function deleteBody(id){db.body=db.body.filter(x=>x.id!==id);persist();renderBody()}
+function renderAll(){document.getElementById('sessionCount').textContent=db.sessions.length;document.getElementById('prCount').textContent=Object.keys(getPRs()).length;let now=new Date(),monday=new Date(now);monday.setDate(now.getDate()-((now.getDay()+6)%7));monday.setHours(0,0,0,0);document.getElementById('weekCount').textContent=db.sessions.filter(s=>new Date(s.date+'T12:00:00')>=monday).length+'/4';renderHistory();renderProgress();renderBody();let r=document.getElementById('recentHome');r.innerHTML=db.sessions.length?[...db.sessions].reverse().slice(0,3).map(s=>`<div class="history-item"><b>${esc(s.name)}</b><div class="muted small">${niceDate(s.date)} · ${s.exercises.length} Übungen</div></div>`).join(''):'<div class="empty">Dein erstes Training wartet auf dich.</div>'}
+function getPRs(){let p={};db.sessions.forEach(s=>s.exercises.forEach(e=>e.sets.forEach(x=>{let w=Number(x.weight);if(x.weight!==''&&Number.isFinite(w)&&(!p[e.name]||w>p[e.name]))p[e.name]=w})));return p}
+function exportData(){let blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='gymlog-sicherung-'+dateStr()+'.json';a.click();URL.revokeObjectURL(a.href)}
+function importData(ev){let f=ev.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result);if(!Array.isArray(x.sessions)||!Array.isArray(x.body))throw 0;if(confirm('Import ersetzt die aktuellen Daten. Vorher bitte ggf. exportieren. Fortfahren?')){db=x;persist();alert('Sicherung importiert.')}}catch(e){alert('Datei ist keine gültige GYMLOG-Sicherung.')}};r.readAsText(f);ev.target.value=''}
+
+let timerInterval=null,timerLeft=90;
+function paintTimer(){const m=String(Math.floor(timerLeft/60)).padStart(2,'0'),s=String(timerLeft%60).padStart(2,'0');const el=document.getElementById('timerDisplay');if(el)el.textContent=m+':'+s}
+function startTimer(seconds){clearInterval(timerInterval);timerLeft=seconds;paintTimer();timerInterval=setInterval(()=>{timerLeft--;paintTimer();if(timerLeft<=0){clearInterval(timerInterval);timerInterval=null;try{if(navigator.vibrate)navigator.vibrate([180,80,180])}catch(e){};const el=document.getElementById('timerDisplay');if(el)el.textContent='FERTIG!'}},1000)}
+function stopTimer(){clearInterval(timerInterval);timerInterval=null;timerLeft=90;paintTimer()}
+
+cards('workoutCards','startWorkout');cards('planCards','startWorkout');setEquipment('both');setSetStyle('straight');deloadMode=isDeload();updateDeloadUI();document.getElementById('bodyDate').value=dateStr();renderAll();
+if('serviceWorker' in navigator && location.protocol.startsWith('http')){navigator.serviceWorker.register('./sw.js').catch(()=>{});}
+</script>
+</body>
+</html>
