@@ -1,0 +1,27 @@
+{
+  "id": "./",
+  "name": "GYMLOG – Dein Training",
+  "short_name": "GYMLOG",
+  "description": "Privates Trainingstagebuch für Muskelaufbau und Fettverlust",
+  "lang": "de-DE",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#101510",
+  "theme_color": "#101510",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
